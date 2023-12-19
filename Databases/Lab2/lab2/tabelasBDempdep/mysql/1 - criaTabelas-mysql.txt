@@ -1,0 +1,44 @@
+/* 
+   Fazer copy-paste deste ficheiro
+   para um terminal de SQL e executar.
+*/
+
+drop table emp;
+drop table dep;
+drop table descontos;
+
+
+/* Cria a tabela dos descontos
+ */
+CREATE TABLE descontos
+(escalao      NUMERIC(2)      PRIMARY KEY,
+ salinf       NUMERIC(7)      NOT NULL,
+ salsup       NUMERIC(7)      NOT NULL
+);
+
+
+
+/* Cria a tabela dos departamentos
+
+CREATE TABLE dep
+(ndep         NUMERIC(2) PRIMARY KEY               , 
+ nome         VARCHAR(15) NOT NULL,
+ local        VARCHAR(15) NOT NULL
+);
+
+/* Cria a tabela dos empregados */
+
+CREATE TABLE emp
+(nemp          NUMERIC(4) PRIMARY KEY, 
+ nome          VARCHAR(20) NOT NULL   , 
+ funcao        VARCHAR(12) NOT NULL   , 
+ encar         NUMERIC REFERENCES emp(nemp),
+ data_entrada  timestamp DEFAULT now(),
+sal           NUMERIC(7) NOT NULL   ,
+ premios       NUMERIC(7)      DEFAULT NULL , 
+ ndep          NUMERIC(2) NOT NULL REFERENCES dep(ndep)
+);
+
+
+
+

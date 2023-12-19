@@ -1,0 +1,18 @@
+<a href="/brMotogp/">Home</a></p>
+<h1>{{team.name}} details</h1>
+<picture>
+ <source media="(min-width:320px)" srcset={{team.pic}}>
+ <source media="(min-width:240px)" srcset={{team.pic}}>
+ <img src={{team.pic}} alt={{team.name}}-{{team.pic}} style="max-width:600px;">
+</picture>
+<h3>Country: {{team.country}}</h3>
+<h3>Motos:</h3>
+{% if motos %}
+    <ul>
+    {% for motoROW in motos %}
+        <li><a href="/brMotogp/motos/{{motoROW.id}}/">{{motoROW.model}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No moto to show.</p>
+{% endif %}

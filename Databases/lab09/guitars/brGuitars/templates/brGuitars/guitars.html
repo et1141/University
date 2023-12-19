@@ -1,0 +1,10 @@
+<a href="/brGuitars/">Home</a></p>
+{% if guitars %}
+    <ul>
+    {% for Guitar in guitars %}
+        <li><a href="/brGuitars/guitars/{{Guitar.id}}/">{{ Guitar.luthier }}-{{Guitar.model}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No guitar to show.</p>
+{% endif %}

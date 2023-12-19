@@ -1,0 +1,21 @@
+1.
+select imovel.address, lname, fname 
+from imovel, proprietario
+where imovel.nif = proprietario.nif
+
+2.
+select imovel.address, lname, fname 
+from imovel, proprietario
+where imovel.nif = proprietario.nif and imovel.location = 'Coimbra'
+
+3.
+
+select imovel.ref, imovel.address, lname || '' || fname as name, id, photo
+from imovel,proprietario,photo
+where imovel.nif = proprietario.nif and imovel.ref = photo.ref 
+
+
+4.
+select imovel.ref, imovel.address, lname || '' || fname as name, id, photo
+from imovel FULL JOIN proprietario ON (imovel.nif=proprietario.nif)
+FULL JOIN photo ON imovel.ref=photo.ref

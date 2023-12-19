@@ -1,0 +1,23 @@
+<a href="/brGuitars/">Home</a></p>
+<h1>{{guitar.luthier.name}}-{{guitar.model}}</h1>
+<h3>Year: {{guitar.year}}</h3>
+<h3>top: {{guitar.top}}</h3>
+<h3>bottom: {{guitar.bottom}}</h3>
+<h3>neck: {{guitar.neck}}</h3>
+<h3>fretboard: {{guitar.fretboard}}</h3>
+<h3>sadle: {{guitar.sadle}}</h3>
+<h3>tuningMachines: {{guitar.tuningMachines}}</h3>
+
+{% if pics %}
+    <ul>
+    {% for GuitarPic in pics %}
+	<picture>
+	 <source media="(min-width:320px)" srcset={{GuitarPic.img}}>
+	 <source media="(min-width:240px)" srcset={{GuitarPic.img}}>
+	 <img src={{GuitarPic.img}} alt={{guitar.luthier.name}}-{{guitar.model}}-{{luthier.pic}} style="width:auto;">
+	</picture>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No pics to show.</p>
+{% endif %}

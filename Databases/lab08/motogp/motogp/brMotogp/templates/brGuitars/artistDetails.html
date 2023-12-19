@@ -1,0 +1,20 @@
+<a href="/brGuitars/">Home</a></p>
+<h1>{{artist.name}}</h1>
+<picture>
+ <source media="(min-width:320px)" srcset={{artist.pic}}>
+ <source media="(min-width:240px)" srcset={{artist.pic}}>
+ <img src={{artist.pic}} alt={{artist.name}}-{{artist.pic}} style="width:auto;">
+</picture>
+<h3>Country: {{artist.country}}</h3>
+<h3>Birth: {{artist.birth}}</h3>
+<h3>Death: {{artist.death}}</h3>
+<h3>Recordings:</h3>
+{% if recs %}
+    <ul>
+    {% for Recording in recs %}
+        <li><a href="/brGuitars/recordings/{{Recording.id}}/">{{Recording.name}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No recordings to show.</p>
+{% endif %}

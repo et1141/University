@@ -1,0 +1,10 @@
+<a href="/brGuitars/">Home</a></p>
+{% if guitarPics %}
+    <ul>
+    {% for GuitarPic in guitarPics %}
+        <li><a href="/brGuitars/guitars/{{GuitarPic.guitar_id}}/">{{GuitarPic.guitar.luthier}}-{{ GuitarPic.guitar }}-{{GuitarPic.id}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No pics to show.</p>
+{% endif %}

@@ -1,0 +1,32 @@
+Apteka szpitalna
+Duży szpital zamierza zinformatyzować zarządzanie podawaniem leków pacjentom, 
+dlatego potrzebuje bazy danych, której projektowanie powinno uwzględniać następujące kwestie:
+
+Każdy oddział szpitala (kardiologia, laryngologia, medycyna wewnętrzna, itp.) ma swoją własną 
+aptekę. Leki dostępne w aptekach poszczególnych oddziałów są ogólnie określane przez typowe 
+potrzeby pacjentów hospitalizowanych na danym oddziale. Niemniej jednak apteka każdego oddziału 
+ma także niektóre leki o bardziej ogólnym zastosowaniu oraz leki, które są typowe także dla aptek
+ innych oddziałów. Szpital ma także aptekę centralną, której zapas ma pokrywać najczęściej używane
+leki we wszystkich specjalnościach.
+Leki stosowane w szpitalu są wszystkie generyczne i opisane są przez szereg atrybutów (kod, skład 
+chemiczny, forma podawania [tabletki, zastrzyki, itp.], sposób stosowania, wskazania, itp.). Dla 
+każdego konkretnego leku dostępnego w magazynie konieczne jest także zarejestrowanie daty ważności. 
+Apteki w szpitalu mają także inne produkty, takie jak protezy, bawełna, strzykawki jednorazowe, itp.
+ Te produkty również powinny być uwzględnione w zapasach (w bazie danych) każdej apteki.
+Zarządzanie zapasem leków jest globalne. Oznacza to, że odbywa się na podstawie ogólnej liczby leków dostępnych w szpitalu (apteki oddziałów + apteka centralna). W tym celu baza danych powinna umożliwiać sprawdzenie, jakie leki/produkty są dostępne we wszystkich szpitalnych aptekach i w której z nich.
+Za każdym razem, gdy lekarz przepisuje leki danemu pacjentowi (hospitalizowanemu w szpitalu), tworzona jest requisition (żądanie). Zazwyczaj każde żądanie obejmuje różne leki. O ile to możliwe, żądanie powinno być zaspokojone w aptece oddziału, na którym pacjent jest hospitalizowany. Leki (z żądania), które nie są dostępne w aptece oddziału, w którym zostało wystawione żądanie, są pobierane z dowolnej innej apteki w szpitalu, gdzie są dostępne.
+(a) Przedstaw diagram ER, który poprawnie przedstawia strukturę pożądanej bazy danych. Jeśli uważasz to za konieczne i/lub stosowne, możesz wprowadzić nowe elementy uzupełniające powyższy opis. Wszystkie założenia, na których się opierasz i które nie zostały wspomniane w tekście, muszą być uzasadnione.
+(b) Pokaż również schemat fizyczny (tabel i widoków, jeśli uznasz to za konieczne) i wyjaśnij najważniejsze aspekty utrzymania integralności bazy danych.
+
+
+
+
+
+apteka na kazdy unit 
+jest tez globalna apteka
+
+apteki w unicie maja leki ktore sa zazwyczaj tam uzywane
+chcemy globalnie sledzic co gdize jest uzywane 
+
+lekarze przepisuja leki pacjenta (musza zrobic prescription)
+(prescription ma zazwyczaj duzo roznych lekow)

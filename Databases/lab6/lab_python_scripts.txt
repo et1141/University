@@ -1,0 +1,29 @@
+from matplotlib import pyplot as plt
+from matplotlib import image as mpimg
+plt.title("Apartment Image")
+plt.xlabel("X pixel scaling")
+plt.ylabel("Y pixels scaling")
+image = mpimg.imread("C:/Pliki/sem5/Databases/Lab5/apartment1.jpg")
+plt.imshow(image)
+plt.show()
+
+2: Skrypt do połączenia się z bazą danych
+
+import psycopg2
+conn = psycopg2.connect(host="localhost",user='postgres',
+password="0643", dbname='apartments', port=5432)
+
+cursor = conn.cursor()
+query="select *from photo"
+cursor.execute(query)
+rows = cursor.fetchall()
+for row in rows:
+    print("what?",row)
+    image = mpimg.imread(row[1])
+    plt.imshow(image)
+    plt.show()
+for row in rows:
+    print("what?", row)
+for row in rows:
+    print("what?", row[0], ":", row[1])
+conn.close()

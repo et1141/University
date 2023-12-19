@@ -1,0 +1,10 @@
+<a href="/brGuitars/">Home</a></p>
+{% if artists %}
+    <ul>
+    {% for Artist in artists %}
+        <li><a href="/brGuitars/artists/{{Artist.id}}/">{{ Artist.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No artist to show.</p>
+{% endif %}

@@ -1,0 +1,20 @@
+<a href="/brGuitars/">Home</a></p>
+<h1>{{luthier.name}} details</h1>
+<picture>
+ <source media="(min-width:320px)" srcset={{luthier.pic}}>
+ <source media="(min-width:240px)" srcset={{luthier.pic}}>
+ <img src={{luthier.pic}} alt={{luthier.name}}-{{luthier.pic}} style="width:auto;">
+</picture>
+<h3>Country: {{luthier.country}}</h3>
+<h3>Birth: {{luthier.birth}}</h3>
+<h3>Death: {{luthier.death}}</h3>
+<h3>Guitars:</h3>
+{% if guitars %}
+    <ul>
+    {% for guitarROW in guitars %}
+        <li><a href="/brGuitars/guitars/{{guitarROW.id}}/">{{guitarROW.model}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No guitar to show.</p>
+{% endif %}

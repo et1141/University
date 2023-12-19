@@ -1,0 +1,10 @@
+<a href="/brGuitars/">Home</a></p>
+{% if recordings %}
+    <ul>
+    {% for Recording in recordings %}
+        <li><a href="/brGuitars/recordings/{{Recording.id}}/">{{Recording.artist}}-{{ Recording.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No recording to show.</p>
+{% endif %}

@@ -1,0 +1,11 @@
+<a href="/brGuitars/">Home</a></p>
+{% if luthiersA %}
+    <ul>
+    {% for luthierROW in luthiersA %}
+        <li><a href="/brGuitars/luthiergitars/{{luthierROW.id}}/">{{ luthierROW.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No luthiers to show.</p>
+{% endif %}
+

@@ -1,0 +1,11 @@
+<a href="/brMotogp/">Home</a></p>
+{% if teams %}
+    <ul>
+    {% for teamROW in teams %}
+        <li><a href="/brMotogp/teams/{{teamROW.id}}/">{{ teamROW.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No teams to show.</p>
+{% endif %}
+
